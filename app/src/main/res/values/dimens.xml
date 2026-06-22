@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_padding">18dp</dimen>
+    <dimen name="panel_padding">18dp</dimen>
+    <dimen name="panel_gap">18dp</dimen>
+    <dimen name="control_height">54dp</dimen>
+    <dimen name="photo_height">118dp</dimen>
+</resources>

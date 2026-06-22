@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app"
+    tools:context=".RoadCardActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarRoadCard"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@drawable/bg_toolbar"
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingEnd="@dimen/screen_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIconTint="@color/white"
+        app:title="Karta drogowa"
+        app:titleTextColor="@color/white" />
+
+    <ScrollView
+        android:id="@+id/scrollRoadCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:padding="@dimen/screen_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarRoadCard">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/sectionRoadHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_panel"
+                android:orientation="vertical"
+                android:padding="@dimen/panel_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dane karty"
+                    android:textColor="@color/ink"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Ciagnik / numer rejestracyjny"
+                    android:textColor="@color/muted"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spVehicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/control_height"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/edit_text_background"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Karta drogowa nr"
+                            android:textColor="@color/muted"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etRoadCardNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/control_height"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/edit_text_background"
+                            android:focusable="false"
+                            android:hint="generowany automatycznie"
+                            android:inputType="none"
+                            android:textColor="@color/ink"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Naczepa nr rejestracyjny"
+                            android:textColor="@color/muted"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/spTrailer"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/control_height"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/edit_text_background"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Kierowca"
+                    android:textColor="@color/muted"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etRoadDriverName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/control_height"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="Imie i nazwisko"
+                    android:inputType="textPersonName|textCapWords"
+                    android:textColor="@color/ink"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Wyjazd data i godzina"
+                            android:textColor="@color/muted"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etDepartureDateTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/control_height"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/edit_text_background"
+                            android:hint="RRRR-MM-DD HH:MM"
+                            android:inputType="datetime"
+                            android:textColor="@color/ink"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Powrot data i godzina"
+                            android:textColor="@color/muted"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etReturnDateTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/control_height"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/edit_text_background"
+                            android:hint="RRRR-MM-DD HH:MM"
+                            android:inputType="datetime"
+                            android:textColor="@color/ink"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Stan licznika wyjazd"
+                            android:textColor="@color/muted"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etHeaderOdometerDeparture"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/control_height"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/edit_text_background"
+                            android:hint="km"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/ink"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Stan licznika powrot"
+                            android:textColor="@color/muted"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etHeaderOdometerReturn"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/control_height"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/edit_text_background"
+                            android:hint="km"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/ink"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sectionRouteLegs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/panel_gap"
+                android:background="@drawable/bg_panel"
+                android:orientation="vertical"
+                android:padding="@dimen/panel_padding">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Rozliczenie czasu pracy i kilometrow"
+                        android:textColor="@color/ink"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAddPoint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/control_height"
+                        android:backgroundTint="@color/primary"
+                        android:minWidth="170dp"
+                        android:text="Dodaj odcinek"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        app:cornerRadius="6dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvRouteSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="0 odcinkow, 0 km"
+                    android:textColor="@color/muted"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:id="@+id/pointsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="vertical" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmitRoadCard"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="@dimen/panel_gap"
+                android:backgroundTint="@color/accent"
+                android:text="Zapisz karte drogowa"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:cornerRadius="6dp" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

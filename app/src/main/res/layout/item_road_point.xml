@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="14dp"
+    android:background="@drawable/bg_panel"
+    android:orientation="vertical"
+    android:padding="14dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvLegNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Odcinek 1"
+            android:textColor="@color/ink"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveLeg"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:backgroundTint="@color/primary"
+            android:text="Zapisz odcinek"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:cornerRadius="6dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUnlockLeg"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:text="Odblokuj"
+            android:textAllCaps="false"
+            android:textColor="@color/primary"
+            android:visibility="gone"
+            app:cornerRadius="6dp"
+            app:strokeColor="@color/line" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRemoveLeg"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_marginStart="4dp"
+            android:text="Usun"
+            android:textAllCaps="false"
+            android:textColor="@color/danger" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvLockState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Edycja aktywna"
+        android:textColor="@color/muted"
+        android:textSize="13sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Wyjazd data i godzina"
+        android:textColor="@color/muted"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etDepartureDate"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/control_height"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:hint="RRRR-MM-DD"
+            android:inputType="date"
+            android:textColor="@color/ink"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etDepartureTime"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/control_height"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:hint="HH:MM"
+            android:inputType="time"
+            android:textColor="@color/ink"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Miejscowosc wyjazdu / punkt poczatkowy"
+        android:textColor="@color/muted"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etStartAddress"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/control_height"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:hint="Adres lub miejscowosc wyjazdu"
+            android:inputType="textPostalAddress|textCapSentences"
+            android:textColor="@color/ink"
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStartLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/control_height"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/info"
+            android:minWidth="130dp"
+            android:text="Lokalizacja"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:cornerRadius="6dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvStartPoint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Brak punktu GPS"
+        android:textColor="@color/muted"
+        android:textSize="13sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Stan licznika wyjazd"
+        android:textColor="@color/muted"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etOdometerBefore"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/control_height"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="km"
+        android:inputType="numberDecimal"
+        android:textColor="@color/ink"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Miejscowosc przyjazdu / punkt koncowy"
+        android:textColor="@color/muted"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etEndAddress"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/control_height"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:hint="Adres lub miejscowosc przyjazdu"
+            android:inputType="textPostalAddress|textCapSentences"
+            android:textColor="@color/ink"
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEndLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/control_height"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/info"
+            android:minWidth="130dp"
+            android:text="Lokalizacja"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:cornerRadius="6dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvEndPoint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Brak punktu GPS"
+        android:textColor="@color/muted"
+        android:textSize="13sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Stan licznika przyjazd"
+        android:textColor="@color/muted"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etOdometerAfter"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/control_height"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="km"
+        android:inputType="numberDecimal"
+        android:textColor="@color/ink"
+        android:textSize="16sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnToggleBorder"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/control_height"
+        android:layout_marginTop="14dp"
+        android:text="Przekroczenie granicy"
+        android:textAllCaps="false"
+        android:textColor="@color/primary"
+        app:cornerRadius="6dp"
+        app:strokeColor="@color/line" />
+
+    <LinearLayout
+        android:id="@+id/groupBorderFields"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/etBorderDeparture"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/control_height"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:hint="Wjazd data/godz."
+            android:inputType="datetime"
+            android:textColor="@color/ink"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etBorderReturn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/control_height"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:hint="Wyjazd data/godz."
+            android:inputType="datetime"
+            android:textColor="@color/ink"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Przebieg km"
+        android:textColor="@color/muted"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etLoadedKm"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/control_height"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:hint="Km ladowne"
+            android:inputType="numberDecimal"
+            android:textColor="@color/ink"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etEmptyKm"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/control_height"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:hint="Km puste"
+            android:inputType="numberDecimal"
+            android:textColor="@color/ink"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etDistanceKm"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Tonaz"
+        android:textColor="@color/muted"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etCargoKg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/control_height"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="kg"
+        android:inputType="numberDecimal"
+        android:textColor="@color/ink"
+        android:textSize="16sp" />
+</LinearLayout>

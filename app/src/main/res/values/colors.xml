@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_bg_top">#FFF8EC</color>
+    <color name="app_bg_bottom">#E7F0EA</color>
+    <color name="surface">#FFFFFFFF</color>
+    <color name="surface_muted">#F7FAF4</color>
+    <color name="surface_pressed">#EEF5EF</color>
+    <color name="ink">#17211D</color>
+    <color name="muted">#65736D</color>
+    <color name="line">#D7DDD5</color>
+    <color name="primary">#103B34</color>
+    <color name="primary_dark">#071E1B</color>
+    <color name="accent">#FF6B00</color>
+    <color name="accent_soft">#FFF0E1</color>
+    <color name="info">#1E5F84</color>
+    <color name="success">#276749</color>
+    <color name="danger">#B42318</color>
+    <color name="fuel_soft">#FFF0E1</color>
+    <color name="fuel_line">#FFB574</color>
+    <color name="card_soft">#EAF3FF</color>
+    <color name="card_line">#9DC4FF</color>
+    <color name="cash_soft">#E7F7EE</color>
+    <color name="cash_line">#86D9AA</color>
+    <color name="private_soft">#F2EAFE</color>
+    <color name="private_line">#C7A8F6</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
